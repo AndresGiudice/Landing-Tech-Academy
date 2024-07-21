@@ -1,0 +1,250 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Inconsolata", monospace;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+}
+
+header {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: transparent;
+}
+header .logo {
+  font-size: 30px;
+  font-weight: 600;
+}
+header .open-menu {
+  display: none;
+}
+header .nav .close-menu {
+  display: none;
+}
+header .nav .navlist {
+  display: flex;
+}
+header .nav .navlist a {
+  margin-left: 50px;
+  font-size: 26px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+header .nav .navlist a:hover {
+  border-bottom: 2px solid white;
+}
+
+section.hero {
+  height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+section.hero .hero-text h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+section.hero .hero-text h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+section.hero .hero-text p {
+  font-size: 15px;
+  margin-bottom: 40px;
+  line-height: 1.9;
+}
+section.hero .hero-text a {
+  display: inline-block;
+  background-color: #4d4d4d;
+  border: 1px solid transparent;
+  padding: 15px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+section.hero .hero-text a:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  transform: translateX(8px);
+}
+section.hero .hero-text a.videos {
+  background-color: transparent;
+  border: 1px solid white;
+  margin-left: 20px;
+}
+section.hero .hero-text a.videos i {
+  margin-right: 5px;
+}
+section.hero .hero-img img {
+  width: 350px;
+}
+
+div.icons {
+  position: absolute;
+  top: 47vh;
+  padding: 0 3%;
+  transform: translateY(-50%);
+}
+div.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+div.icons i:hover {
+  color: #4d4d4d;
+  transform: translateY(-5px);
+}
+
+div.scroll-down {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+}
+div.scroll-down i {
+  display: block;
+  padding: 12px;
+  background-color: #21383d;
+  font-size: 25px;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+div.scroll-down i:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  position: relative;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 0;
+}
+footer i {
+  margin-left: 10px;
+  font-size: 24px;
+}
+footer i:hover {
+  color: #4d4d4d;
+}
+
+@media (max-width: 1260px) {
+  div.icons i {
+    display: none;
+  }
+  div.scroll-down {
+    display: none;
+  }
+}
+@media (max-width: 920px) {
+  section.hero {
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  section.hero .hero-text {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 782px) {
+  header {
+    /* This clase will be added with Javascript */
+  }
+  header .open-menu {
+    display: block;
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  header .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #021719;
+    padding: 2rem;
+    /* To hide the nav correctly, we need to use the 'opacity' and 'visibility' properties. */
+    opacity: 0;
+    visibility: hidden;
+  }
+  header .nav .close-menu {
+    display: block;
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 40px;
+    margin-bottom: 50px;
+    cursor: pointer;
+  }
+  header .nav .navlist {
+    flex-direction: column;
+    align-items: end;
+    gap: 1.5rem;
+    padding-right: 1rem;
+  }
+  header .visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (max-width: 493px) {
+  footer {
+    padding: 5px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+}
+@media (max-width: 371px) {
+  section.hero .hero-text a.videos {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  header button {
+    margin-top: 9px;
+  }
+  section.hero .hero-text h4, section.hero .hero-text h1, section.hero .hero-text p {
+    width: 320px;
+  }
+  section.hero .hero-text a.videos {
+    display: none;
+  }
+  section.hero .hero-img img {
+    width: 280px;
+  }
+  footer {
+    font-size: small;
+  }
+}/*# sourceMappingURL=style.css.map */
